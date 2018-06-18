@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Prodavachnik</title>
+	<script src="scripts/jquery-3.3.1.js"></script>
+	<script src="../node_modules/handlebars/dist/handlebars.js"></script>
+	<script src="scripts/prodavachnik.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/prodavachnik.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+<header id="menu" class="menu">
+	<a href="#" id="linkHome" class="menu-item" data-target="viewHome">Home</a>
+	<a href="#" id="linkLogin" class="menu-item" data-target="viewLogin">Login</a>
+	<a href="#" id="linkRegister" class="menu-item" data-target="viewRegister">Register</a>
+	<a href="#" id="linkListAds" class="menu-item" data-target="viewAds">List Advertisements</a>
+	<a href="#" id="linkCreateAd" class="menu-item" data-target="viewCreateAd">Create Advertisement</a>
+	<a href="#" id="linkLogout" class="menu-item">Logout</a>
+	<span id="loggedInUser" class="menu-item"></span>
+	<div></div>
+</header>
+
+<main>
+	<div id="loadingBox" class="loadingBox notification">Loading ...</div>
+	
+	<div id="infoBox" class="infoBox notification">Info</div>
+	
+	<div id="errorBox" class="errorBox notification">Error</div>
+	
+	<section id="viewHome" class="viewHome">
+		<h1 class="title">Welcome</h1>
+		<p class="body-text">Welcome to our advertisement site.</p>
+	</section>
+	
+	<section id="viewLogin" class="viewLogin">
+		<h1 class="titleForm">Please login</h1>
+		<form id="formLogin" class="form">
+			<div>Username:</div>
+			<div><input type="text" name="username" required/></div>
+			<div>Password:</div>
+			<div><input type="password" name="passwd" required/></div>
+			<div><input type="button" id="buttonLoginUser" value="Login"/></div>
+		</form>
+	</section>
+	
+	<section id="viewRegister" class="viewRegister"></section>
+	
+	<section id="viewAds" class="viewAds">
+		<div id="content"></div>
+	</section>
+	
+	<section id="viewCreateAd" class="viewCreateAd"></section>
+	
+	<section id="viewDetailsAd" class="viewDetailsAd"></section>
+	
+	<section id="viewEditAd" class="viewEditAd"></section>
+	<script>
+		startApp();
+	</script>
+</main>
+<footer>Prodavachnik - Simple SPA Application</footer>
+</body>
+</html>

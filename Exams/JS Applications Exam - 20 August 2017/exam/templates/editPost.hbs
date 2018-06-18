@@ -1,0 +1,23 @@
+{{> header}}
+<div class="content">
+	{{> menu}}
+	<div class="submitArea">
+		<h1>Submit Link</h1>
+		<p>Please, fill out the form. A thumbnail image is not required.</p>
+	</div>
+	<div class="submitArea formContainer">
+		<form action="#/edit/post" method="post" id="submitForm" class="submitForm">
+			<input type="hidden" name="postId" value="{{post._id}}"/>
+			<label>Link URL:</label>
+			<input name="url" value="{{post.url}}" type="text">
+			<label>Link Title:</label>
+			<input name="title" value="{{post.title}}" type="text">
+			<label>Link Thumbnail Image (optional):</label>
+			<input name="imageUrl" value="{{post.imageUrl}}" type="text">
+			<label>Comment (optional):</label>
+			<textarea name="description">{{post.description}}</textarea>
+			<input id="btnSubmitPost" value="Submit" type="submit">
+		</form>
+	</div>
+</div>
+{{> footer}}

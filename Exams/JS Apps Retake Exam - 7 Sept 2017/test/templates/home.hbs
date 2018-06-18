@@ -1,0 +1,28 @@
+{{> header}}
+{{> menu}}
+
+<div class="content">
+	<div class="chirper">
+
+		{{#if filter}}
+			<h2 class="titlebar">{{filter}}</h2>
+		{{else}}
+			<h2 class="titlebar">{{username}}</h2>
+		{{/if}}
+
+		{{#if isMe}}
+			<form action="#/chirp" method="post" id="formSubmitChirp" class="chirp-form">
+				<textarea name="text" class="chirp-input"></textarea>
+				<input class="chirp-submit" id="btnSubmitChirp" value="Chirp" type="submit">
+			</form>
+		{{/if}}
+		<div id="userStats" class="user-details">
+			{{> stats}}
+		</div>
+	</div>
+	<div id="chirps" class="chirps"><h2 class="titlebar">Chirps</h2>
+		{{> chirpList}}
+	</div>
+</div>
+
+{{> footer}}
